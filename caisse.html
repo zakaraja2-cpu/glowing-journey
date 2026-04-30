@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Checkout</title>
+<link rel="stylesheet" href="caisse.css">
+</head>
+
+<body>
+
+<h1>Checkout</h1>
+
+<div class="checkout-container">
+
+    <!-- LEFT: FORM -->
+    <div class="checkout-form">
+        <h2>Informations client</h2>
+
+        <input type="text" id="name" placeholder="Nom complet" value="FEKKAK HAJAR">
+        <input type="text" id="phone" placeholder="Téléphone" value="0600000000">
+        <input type="text" id="city" placeholder="Ville" value="rabat">
+        <input type="text" id="address" placeholder="Adresse" value="build456">
+
+        <h3>Méthode de paiement</h3>
+
+        <select id="payment">
+            <option value="cash">Paiement à la livraison</option>
+            <option value="card">Carte bancaire</option>
+        </select>
+
+        <button onclick="placeOrder()">Confirmer la commande</button>
+    </div>
+
+    <!-- RIGHT: SUMMARY -->
+    <div class="checkout-summary">
+        <h2>Résumé</h2>
+        <div id="summary-items"></div>
+        <h3 id="total"></h3>
+    </div>
+
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function displaySummary() {
+    let container = document.getElementById("summary-items");
+    let totalElement = document.getElementById("total");
+    let total = 0;
+
+    container.innerHTML = "";
+
+    cart.forEach(item => {
+        let subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        container.innerHTML += `
+            <div class="summary-item">
+                <span>${item.name} x${item.quantity}</span>
+                <span>${subtotal.toFixed(2)} DH</span>
+            </div>
+        `;
+    });
+
+    totalElement.innerText = "Total: " + total.toFixed(2) + " DH";
+}
+
+function placeOrder() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let city = document.getElementById("city").value;
+    let address = document.getElementById("address").value;
+
+    if (!name || !phone || !city || !address) {
+        alert("Veuillez remplir tous les champs !");
+        return;
+    }
+
+    alert("Commande confirmée ✅");
+
+    localStorage.removeItem("cart");
+    window.location.href = "index.html";
+}
+
+displaySummary();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <script
+     src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js">
+    </script>
+   
+</head>
+<body>
+    <!--HEADER-->
+    <header class="header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.jpeg">
+        <div>
+            <h2>Build<span>Zone</span></h2>
+            <p>Construire demain, aujourd'hui</p>
+        </div>
+    </div>
+
+    <!-- SEARCH -->
+     <form action="search.php" method="get">
+        <div class="search-container">
+        <input type="text" name="q" placeholder="Rechercher un produit...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div></form>
+ 
+
+    <!-- RIGHT -->
+      <!-- COMPTE -->
+    <div class="top-right">
+
+        <div class="account">
+            <i class="fa-regular fa-user"></i>
+            <div>
+               <a href="compte.html"><b>Mon compte</b></a> 
+               <p><a href="connexion.html">Connexion </a>/
+                 <a href="inscription.html">Inscription</a></p>
+            </div>
+        </div>
+        <div>
+            <a href="admin.php">admin</a>
+        </div>
+<!-- PANIER -->
+        <div class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge" id="cart_count">0</span>
+            <a href="panier.html"><b>Panier</b></a>
+        </div>
+
+    </div>
+
+</header>
+    <!--NAVBAR-->
+    <nav>
+<a href="#">ACCUEIL</a>
+<a href="#">PRODUITS</a>
+<a href="#">CATÉGORIES</a>
+<a href="#">PROMOTIONS</a>
+<a href="#">À PROPROS</a>
+<a href="#">CONTACT</a>
+    </nav>
+    <!--HERO-->
+<div class="hero">
+
+  <!-- Image + contenu -->
+  <div class="hero-content">
+    <h1>DES MATÉRIAUX<br>DES <span>QUALITÉ</span></h1>
+   <b><h2>Pour construire l'avenir</h2></b> <br>
+    <p>Decouvrir notre large de matériaux</p>
+    <p> de construction au meilleur prix.</p>
+    <br>
+    <button>Découvrir nos produits</button>
+  </div>
+
+  <!-- SERVICES (fusionnés avec image) -->
+ 
+  <div class="services">
+    <div class="service-box">
+      <i class="fas fa-truck"></i>
+      <h4>Livraison rapide</h4>
+      <p>Partout au Maroc</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-shield-alt"></i>
+      <h4>Produits de qualité</h4>
+      <p>Certifiés & garantis</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-lock"></i>
+      <h4>Paiement sécurisé</h4>
+      <p>100% sécurisé</p>
+    </div>
+  </div>
+
+</div>
+    <!-- RIGHT IMAGE -->
+    <!-- STATS -->
+    <div class="stats">
+      <div>+1200<br><span>Produits</span></div>
+      <div>+850<br><span>Clients</span></div>
+      <div>+50<br><span>Partenaires</span></div>
+    </div>
+  
+</section>
+
+    <!--Catégories-->
+    <div class="Catégories-box">
+     <div class="title">CATÉGORIES <span>POPULAIRES</span></div>
+<div class="Catégories">
+    <div class="swiper mySwiper">
+     <div class="swiper-wrapper">
+    <div class="swiper-slide">
+        <img src="ciment.jpeg" alt="">
+      <p>Ciment</p>  
+    </div>
+    <div class="swiper-slide">
+        <img src="briques.jpeg" alt="">
+        <p>Briques</p></div>
+    <div class="swiper-slide">
+        <img src="fer.jpeg" alt=""><p>Fer</p></div>
+    <div class="swiper-slide">
+        <img src="sable.jpeg" alt=""><p>Sable</p></div>
+    <div class="swiper-slide"><img src="peinture.jpeg" alt=""><p>Peinture</p></div>
+  
+    <div class="swiper-slide"><img src="electricite.jpeg" alt=""><p>Electicite</p></div>
+</div>
+
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+   </div>
+
+  </div>
+</div>
+
+   <!--PRODUITS-->
+   <section class="products-container">
+    <h2>PRODUITS <span>EN VEDETTE</span></h2>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide product-card">
+                <img src="ciment.jpeg" alt="Ciment">
+                <h3>Ciment CPJ 45</h3>
+                <p>85,00 DH</p>
+                <button onclick="addTooCart('Ciment CPJ 45',85)">Ajouter au panier</button>
+            </div>
+
+            <div class="swiper-slide product-card">
+                <img src="briques.jpeg" alt="Brique">
+                <h3>Brique creuse 12</h3>
+                <p>2,35 DH</p>
+              <button onclick="addTooCart('Brique creuse',3.35)">Ajouter au panier</button>
+            </div>
+
+            <div class="swiper-slide product-card">
+                <img src="fer.jpeg" alt="Fer">
+                <h3>Fer à béton 12mm</h3>
+                <p>9,60 DH 1Kg</p>
+               
+               <button onclick="addTooCart('Fer à béton 12mm',9.60)">Ajouter au panier</button>
+            </div>
+            <div class="swiper-slide product-card">
+                <img src="sable.jpeg" alt="">
+                <h3 style="font-size: 15px;">Sable de construction</h3>
+                <p>800,00 DH 6m³</p>
+                <button onclick="addTooCart('Sable de construction',800.00)">Ajouter au panier</button>
+            </div>
+            <div class="swiper-slide product-card">
+                <img src="peinture.jpeg" alt="">
+                <h3>Peinture façade 20Kg</h3>
+                <p>600,00 DH LAKI</p>
+               <button onclick="addTooCart('Peinture façade 20Kg',600.00)">Ajouter au panier</button>
+            </div>
+            <div class="swiper-slide product-card">
+                <img src="tube.jpeg" alt="">
+                <h3 style="font-size: 12.5px;">Tube PVC DIAM 125m weight 3m</h3>
+                <p>60,00 DH</p>
+             <button onclick="addTooCart('Tube PVC DIAM 125m weight 3m',60.00)">Ajouter au panier</button>
+            </div>
+            </div>
+        
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+    
+    <script src="scripts.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5b400; 
+    color: #ffffff;
+    padding: 20px;
+}
+
+/* TITLE */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff; /* blue */
+    letter-spacing: 2px;
+}
+
+/* CART CONTAINER */
+#cart-items {
+    max-width: 800px;
+    margin: auto;
+    background: #05202e;
+    opacity: 1;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.2);
+}
+
+/* ITEM */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #2c2f36;
+    opacity: 1;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+/* ITEM TEXT */
+.item-info b {
+    color: #00bcd4; /* blue */
+    font-size: 1.1rem;
+}
+
+.item-info span {
+    color: #ccc;
+}
+
+/* PRICE */
+.item-price {
+    color: #4caf50; /* green */
+    font-weight: bold;
+}
+
+/* TOTAL */
+#total {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4caf50; /* green */
+}
+
+/* BUTTONS */
+.cart-buttons {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    gap: 15px;
+}
+
+/* GENERAL BUTTON */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* CLEAR BUTTON */
+.btn-clear {
+    background: #e53935;
+    color: white;
+}
+
+.btn-clear:hover {
+    background: #c62828;
+}
+
+/* CHECKOUT BUTTON */
+.btn-checkout {
+    background: #4caf50;
+    color: white;
+    flex: 1;
+}
+
+.btn-checkout:hover {
+    background: #388e3c;
+}
+
+/* EMPTY CART */
+.empty-msg {
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+    padding: 20px;
+}

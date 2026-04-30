@@ -1,0 +1,190 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  
+  background-color: #0d1017;
+ 
+
+}
+
+/* CONTAINER */
+.auth-container {
+  display: flex;
+  height: 100vh;
+}
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.logo span {
+    color: #facc15;
+}
+
+.logo p {
+    font-size: 12px;
+    color: #ccc;
+}
+/* LEFT SIDE */
+.left {
+ flex: 1;
+  background: url('construction.jpeg') center/cover no-repeat;
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.7);
+  background-blend-mode: darken;
+}
+ 
+
+
+
+.left h1 {
+  font-size: 40px;
+  
+}
+
+.left span {
+  color: #f5b400;
+}
+
+.left p {
+  margin: 20px 0;
+}
+
+.left ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left li {
+  margin: 10px 0;
+}
+
+/* RIGHT SIDE */
+.right {
+  flex: 1;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FORM BOX */
+.form-box {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-box h2 {
+  margin-bottom: 5px;
+}
+
+.form-box p {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* CHECKBOX */
+.checkbox {
+  font-size: 14px;
+  display: block;
+  margin: 10px 0;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #f5b400;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffcc00;
+}
+
+/* LINK */
+.login-link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.login-link a {
+  color: #f5b400;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .left {
+    display: none;
+  }
+}
+.input-group {
+  position: relative;
+  margin: 10px 0;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 40px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* icône gauche */
+.input-group i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+
+.input-group i:first-child {
+  left: 12px;
+}
+
+/* icône droite (oeil) */
+.input-group .toggle {
+  right: 12px;
+  cursor: pointer;
+}
+.features p {
+    margin: 10px 0;
+}

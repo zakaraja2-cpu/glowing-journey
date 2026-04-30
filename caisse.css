@@ -1,0 +1,75 @@
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d1117;
+    color: white;
+    padding: 20px;
+}
+
+/* TITLE */
+h1 {
+    text-align: center;
+    color: #00bcd4;
+    margin-bottom: 30px;
+}
+
+/* CONTAINER */
+.checkout-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* FORM */
+.checkout-form {
+    flex: 1;
+    background: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.checkout-form input,
+.checkout-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+/* BUTTON */
+.checkout-form button {
+    width: 100%;
+    padding: 12px;
+    background: #4caf50;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.checkout-form button:hover {
+    background: #388e3c;
+}
+
+/* SUMMARY */
+.checkout-summary {
+    flex: 1;
+    background: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ITEMS */
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+/* TOTAL */
+#total {
+    margin-top: 20px;
+    color: #4caf50;
+}

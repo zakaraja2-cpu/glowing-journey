@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mon compte</title>
+
+<link rel="stylesheet" href="compte.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="left">
+        <div class="overlay">
+            <h1>MON COMPTE</h1>
+            <p>Gérez vos informations personnelles</p>
+
+            <div class="features">
+                <p><i class="fas fa-user"></i> Profil sécurisé</p>
+                <p><i class="fas fa-edit"></i> Modification facile</p>
+                <p><i class="fas fa-lock"></i> Données protégées</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+        <div class="form-box">
+
+            <h2>Mes informations</h2>
+
+            <form id="form">
+
+                <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="name" placeholder="Nom complet">
+                </div>
+
+                <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+
+                <div class="input-box">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" id="phone" placeholder="Téléphone">
+                </div>
+
+                <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Nouveau mot de passe">
+                </div>
+
+                <button type="submit" href="inscription.html">Mettre à jour</button>
+
+                <button type="button" class="logout" onclick="logout()" href="inscription.html">Se déconnecter</button>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+// Récupérer user
+let user = JSON.parse(localStorage.getItem("user"));
+
+// Vérification
+if(!user){
+  window.location.href = "connexion.html";
+}
+
+// Remplir les champs
+document.getElementById("name").value = user.name;
+document.getElementById("email").value = user.email;
+document.getElementById("phone").value = user.phone || "";
+
+// UPDATE
+document.getElementById("form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let updatedUser = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    password: document.getElementById("password").value || user.password
+  };
+
+  localStorage.setItem("user", JSON.stringify(updatedUser));
+
+  alert("✅ Informations mises à jour !");
+});
+
+// LOGOUT
+function logout(){
+  localStorage.removeItem("user");
+  window.location.href = "connexion.html";
+}
+</script>
+
+</body>
+</html>

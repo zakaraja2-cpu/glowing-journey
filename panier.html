@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Panier</title>
+<link rel="stylesheet" href="panier.css">
+</head>
+
+<body>
+
+<h1>🛒Mon Panier </h1>
+
+<div id="cart-items"></div>
+
+<h2 id="total"></h2>
+
+<div class="cart-buttons">
+    <button class="btn-clear" onclick="clearCart()">Vider le panier</button>
+    <button class="btn-checkout" ><a href="caisse.html">Passer à la caisse</a></button>
+</div>
+
+
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function displayCart() {
+  let container = document.getElementById("cart-items");
+  let totalElement = document.getElementById("total");
+  let total = 0;
+
+  container.innerHTML = "";
+
+  if (cart.length === 0) {
+    container.innerHTML = "<p class='empty-msg'>Panier vide</p>";
+    totalElement.innerText = "Total: 0 DH";
+    return;
+  }
+
+  cart.forEach((item) => {
+    let subtotal = item.price * item.quantity;
+    total += subtotal;
+
+    container.innerHTML += `
+      <div class="cart-item">
+        <div class="item-info">
+          <b>${item.name}</b><br>
+          <span>Quantité: ${item.quantity}</span>
+        </div>
+        <div class="item-price">${subtotal.toFixed(2)} DH</div>
+      </div>
+    `;
+  });
+
+  totalElement.innerText = "Total à payer: " + total.toFixed(2) + " DH";
+}
+
+function clearCart() {
+  localStorage.removeItem("cart");
+  cart = [];
+  displayCart();
+}
+
+displayCart();
+</script>
+</body>
+</html>
